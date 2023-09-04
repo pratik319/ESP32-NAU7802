@@ -45,7 +45,6 @@ void calibrateZero()
 {
   // This function should be called when no load is applied to the load cell.
   // It sets the current reading as the zero point.
-
   Serial.println("Calibrating zero...");
 
   long sum = 0;
@@ -57,9 +56,7 @@ void calibrateZero()
     sum += myScale.getReading();
     delay(10); // Delay between readings
   }
-
   zeroOffset = sum / samples;
-
   Serial.print("Zero calibration offset: ");
   Serial.println(zeroOffset);
 
